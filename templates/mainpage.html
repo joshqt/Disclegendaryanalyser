@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href= "{{ url_for('static',filename='style.css') }}">
+</head>
+<body><br><br>
+    <h1>Discipline Log Analyser</h1>
+
+{% if errors %}
+   
+<div class="alert">
+	
+{{ errors }}
+     
+</div>
+    
+{% endif %}
+
+
+    <form action="." method="POST">
+
+        Report Code:<br> <input type="text" name="reportid"><br>
+
+
+        <br>
+        <input type="submit" name="my-form" value="Analyse">
+    </form>
+
+</body>
+</html>

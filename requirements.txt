@@ -1,0 +1,6 @@
+Flask==0.12
+gunicorn==19.7.1
+httplib2==0.10.3
+Jinja2==2.9.5
+requests==2.12.4
+virtualenv==15.1.0

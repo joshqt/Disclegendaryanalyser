@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href= "{{ url_for('static',filename='style.css') }}">
+</head>
+<body><br><br>
+    <h1>Results</h1>
+<form action="." method="POST">
+
+{{cpm}} Casts per minute
+
+    {% if lenience != "0" %}
+    <br>
+    {{lenience}} Healing from Lenience Reward
+    {% endif %}
+    {% if bftd != "0"%}
+    <br>
+    {{bftd}} Healing from barrier for the devoted
+    {% endif %}
+
+    {% if cont != "0"%}
+    <br>
+    {{cont}} Healing contribution from contrition amounting to {{contpercent}}%
+    {% endif %}
+
+    {% if xalans != "0"%}
+    <br>
+    {{xalans}} Healing contribution from xalans amounting to {{xalpercent}}%
+    {% endif %}
+
+    {% if prydaz != "0"%}
+    <br>
+    {{prydaz}} Healing contribution from prydaz amounting to {{prypercent}}%
+    {% endif %}
+    {% if skjoldr != "0"%}
+    <br>
+    {{skjoldr}}Healing contribution from skjoldr amounting to {{skjoldrpercent}}%
+    {% endif %}
+    {% if nero != "0"%}
+    <br>
+    {{nero}}Healing contribution from nero amounting to {{neropercent}}%
+    {% endif %}
+    </form>
+
+
+</body>
+</html>

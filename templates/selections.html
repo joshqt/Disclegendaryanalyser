@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href= "{{ url_for('static',filename='style.css') }}">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script>
+
+
+const secondsUntilReportGenerated = 5;
+
+function countdown(number) {
+    if (number > 0) {
+        console.log(`${number}s`);
+        window.setTimeout(() => countdown(number - 1), 1000);
+    } else {
+        // Taking longer than expected...
+        console.log(`Things are taking longer than expeced...`);
+    }
+};
+
+$(document).ready(() => {
+    const timerSpan = $('.selector-for-timer');
+    const button = $('.load-report-button-selector');
+
+    button.on('click', _ => {
+        window.setTimeout(() => countdown(secondsUntilReportGenerated, timerSpan), 1000);
+    });
+});
+
+</script>
+</head>
+<body><br><br>
+    <h1>Select stuff</h1>
+<form action="." method="POST">
+
+<select name="PlayerSelect" >
+{% for o in priests %}
+    <option value="{{ o }}" SELECTED>{{ o }}</option>
+{% endfor %}
+</select>
+
+    <select name="FightSelect" >
+{% for o in fights %}
+    <option value="{{ o }}" SELECTED>{{ o }}</option>
+{% endfor %}
+</select>
+
+            <br>
+        <input type="submit" name="my-form" value="Analyse" onclick="$('#loading').show();">
+
+<div class = "loading" id="loading" style="display:none;">
+
+   <center> <img src="{{ url_for('static',filename='loading.gif') }}"alt="as" /></center>
+
+
+
+
+</div>
+
+    </form>
+
+
+</body>
+</html>
